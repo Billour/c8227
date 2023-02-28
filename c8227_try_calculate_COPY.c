@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <time.h>
-
 char * addBinary(char *, char *);
 
 struct day_price
@@ -10,9 +8,6 @@ struct day_price
 	double open_price;
 	double end_price;
 	double lowest_price;
-	double highest_price;
-	double trading_volume;
-	struct tm update_time; 
 
 };
 
@@ -35,33 +30,27 @@ int main()
 	for(int i=1; i<= i_max ; ++i )
 		in_data *= i_multi;
 	//printf("Result: %d, i_max: %d, multi:%f \n",in_data, i_max, i_multi);
-	/* 20230227 I tested C language with struct day price, period day price. 
-	 * I also tested <time.h>, used it on the struct day_price.
-	 * */
+/* 20230227 I tested C language with struct day price, period day price. */
 
-	time_t t = time(NULL);
-	struct tm t1 = *localtime(&t); 
-
-        printf( "now: %d-%02d-%02d %02d:%02d:%02d\n", t1.tm_year + 1900, t1.tm_mon + 1, t1.tm_mday, t1.tm_hour, t1.tm_min, t1.tm_sec);
-	struct day_price dd = {175.00, 169.00, 165.00, 175.00, 1822470, t1};
 	//char * cp = malloc(9 * sizeof(char) );
 	//cp = "20230224";
+	struct day_price dd = {175.00, 169.00, 165.00};
 	printf("The open price %lf\n", dd.open_price);
 	printf("The end price %lf\n", dd.end_price);
 	printf("The lowest price %lf\n", dd.lowest_price);
-	printf("The lowest price %lf\n", dd.highest_price);
-	printf("The lowest price %lf\n", dd.trading_volume);
-        printf( "dd's now: %d-%02d-%02d %02d:%02d:%02d\n", dd.update_time.tm_year + 1900, dd.update_time.tm_mon + 1, dd.update_time.tm_mday, dd.update_time.tm_hour, dd.update_time.tm_min, dd.update_time.tm_sec);
+	
 
-/**/	/*
+/**/	
 	char a = '1';
 	char b = '1';
-	char *a = &a_input, *b = &b_input;
+	//char *a = &a_input, *b = &b_input;
 	char *result;
-	result = addBinary(&a, &b);
-	printf("Result ofchar %s \n", *result);
+	//result = addBinary(&a, &b);
+	//printf("Result ofchar %s \n", *result);
+
+	
+
 	free(result);
-*/
 	return 0;
 }
 
