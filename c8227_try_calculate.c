@@ -12,6 +12,7 @@ struct day_price
 	double lowest_price;
 	double highest_price;
 	double trading_volume;
+	struct tm trading_time; 
 	struct tm update_time; 
 
 };
@@ -42,8 +43,12 @@ int main()
 	time_t t = time(NULL);
 	struct tm t1 = *localtime(&t); 
 
-        printf( "now: %d-%02d-%02d %02d:%02d:%02d\n", t1.tm_year + 1900, t1.tm_mon + 1, t1.tm_mday, t1.tm_hour, t1.tm_min, t1.tm_sec);
-	struct day_price dd = {175.00, 169.00, 165.00, 175.00, 1822470, t1};
+	
+	struct tm td = *localtime(&t);// td is the 8277.tw trading day.
+	td.tm_year = 123;
+	td.tm_mon = 1;
+	td.tm_mday = 24;
+	struct day_price dd = {175.00, 169.00, 165.00, 175.00, 1822470, td,t1};
 	//char * cp = malloc(9 * sizeof(char) );
 	//cp = "20230224";
 	printf("The open price %lf\n", dd.open_price);
@@ -52,6 +57,7 @@ int main()
 	printf("The lowest price %lf\n", dd.highest_price);
 	printf("The lowest price %lf\n", dd.trading_volume);
         printf( "dd's now: %d-%02d-%02d %02d:%02d:%02d\n", dd.update_time.tm_year + 1900, dd.update_time.tm_mon + 1, dd.update_time.tm_mday, dd.update_time.tm_hour, dd.update_time.tm_min, dd.update_time.tm_sec);
+        printf( "Trading's day: %d-%02d-%02d %02d:%02d:%02d\n", dd.trading_time.tm_year + 1900, dd.trading_time.tm_mon + 1, dd.trading_time.tm_mday, dd.trading_time.tm_hour, dd.trading_time.tm_min, dd.trading_time.tm_sec);
 
 /**/	/*
 	char a = '1';
