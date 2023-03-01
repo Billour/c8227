@@ -5,6 +5,16 @@
 
 char * addBinary(char *, char *);
 
+/* test Linked list*/
+struct node
+{
+	int data;
+	struct node *next;
+};
+
+typedef struct node NODE;
+/*end  test*/
+
 struct day_price
 {
 	double open_price;
@@ -24,12 +34,41 @@ struct period_day
 
 int main()
 {
+	/*test pointer to Array 20230301 */
+	int i , val , num;
+	NODE *first, *current, *previous;
+	printf("Number of nodes:");
+	scanf("%d", &num);
+	for(i=0; i<num; i++)
+	{
+		current = (NODE *) malloc(sizeof(NODE));
+		printf("Data for node %d:", i + 1);
+		scanf("%d", &(current->data));
+		if(i ==0 )
+			first = current;
+		else
+			previous->next = current;
+		current->next = NULL;
+		previous = current;
+	
+	}
+	current = first;
+	while(current != NULL)
+	{
+		printf("address=%p , ", current);
+		printf("data=%d, ", current->data);
+		printf("next=%p \n", current->next);
+		current = current->next;
+	}
+
 	/*20230221 I'd like to win a lot of money from 8227.tw stock share.
 	 * So I made this program by Geometric progression, a progression of numbers 
 	 * with a constant ratio between each number and the one before.
 	 * (e.g each subsequent number is increased by a factor of 1.07 in
 	 * the progression 173, 173*1.07, 173*1.07*1.07 ).
 	 * */
+
+
 	int in_data = 173;
 	int i_max = 20;
 	double i_multi = 1.07;
