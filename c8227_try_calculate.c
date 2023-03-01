@@ -58,8 +58,12 @@ int main()
 		printf("address=%p , ", current);
 		printf("data=%d, ", current->data);
 		printf("next=%p \n", current->next);
+		previous = current;
 		current = current->next;
+		free(previous);
 	}
+	free(current);
+	printf("\n End test ----\n\n");
 
 	/*20230221 I'd like to win a lot of money from 8227.tw stock share.
 	 * So I made this program by Geometric progression, a progression of numbers 
