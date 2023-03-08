@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include "mountain.h"
 
 char * addBinary(char *, char *);
 
@@ -34,6 +35,13 @@ struct period_day
 
 int main()
 {
+	int a=10;
+	int *A = &a;
+	texth(A);
+	int iii =  7;
+	char ccc;
+	ccc = iii +'0'; /* Convert int to char */
+	printf("%c\n", ccc);
 	/*test pointer to Array 20230301 */
 	int i , val , num;
 	NODE *first, *current, *previous;
