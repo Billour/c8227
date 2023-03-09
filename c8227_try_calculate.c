@@ -35,14 +35,36 @@ struct period_day
 
 int main()
 {
+	/* Call "mountain.h" successfuly
+
 	int a=10;
 	int *A = &a;
 	texth(A);
 	int iii =  7;
 	char ccc;
-	ccc = iii +'0'; /* Convert int to char */
+	ccc = iii +'0'; // Convert int to char
 	printf("%c\n", ccc);
+	*/
 	/*test pointer to Array 20230301 */
+	float c8277amount =0.00;
+	int i_quantity = 14766;
+	float per_price = 0.00;
+	float per_price_hightest = 228.00;
+	float per_price_lowest = 211.50;
+
+	float opening_price = 222.00;//20230309
+	float closing_price = 218.50;
+
+	per_price = per_price_hightest;
+	c8277amount = i_quantity * per_price * 1000;
+	
+	printf("2023/03/09 total H anount NTD :%.2f \n\n", c8277amount);
+	per_price = per_price_lowest;
+	c8277amount = i_quantity * per_price * 1000;
+	
+	printf("2023/03/09 total L anount NTD :%.2f \n\n", c8277amount);
+	
+
 	int i , val , num;
 	NODE *first, *current, *previous;
 	printf("Number of nodes:");
